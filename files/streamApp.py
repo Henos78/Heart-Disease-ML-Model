@@ -1,18 +1,19 @@
 import pickle
 import numpy as np
 import streamlit as st
+import sklearn 
 # Load the saved model from the pickle file and do predictions on the new dataset
-# loaded_model = pickle.load(open("C:/Users/Hp/Desktop/AI-heart-diseaseModel/final_model.pkl", "rb"))
+loaded_model = pickle.load(open("files/final_model.pkl", "rb"))
 
-pickle_in = open("files/final_model.pkl", "rb")
-final_model = pickle.load(pickle_in)
+# pickle_in = open("files/final_model.pkl", "rb")
+# final_model = pickle.load(pickle_in)
 
 # Function to predict the rating
 def patient_test(input_data):
 
     input_data_numpy_array = np.array(input_data, dtype=object)
     input_data_reshaped = input_data_numpy_array.reshape(1, -1)
-    prediction = final_model.predict(input_data_reshaped)
+    prediction = loaded_model.predict(input_data_reshaped)
 
     return prediction[0]
 
