@@ -4,7 +4,7 @@ import streamlit as st
 # Load the saved model from the pickle file and do predictions on the new dataset
 # loaded_model = pickle.load(open("C:/Users/Hp/Desktop/AI-heart-diseaseModel/final_model.pkl", "rb"))
 
-pickle_in = open("files/final_model.pkl.pkl", "rb")
+pickle_in = open("files/final_model.pkl", "rb")
 final_model = pickle.load(pickle_in)
 
 # Function to predict the rating
