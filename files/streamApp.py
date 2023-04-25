@@ -51,10 +51,10 @@ def main():
     rating = ""
 
     if st.button("Predict"):
-        rating = patient_test([age, sex, chest_pain_type, resting_blood_pressure, cholesterol, fasting_blood_sugar, resting_electrocardiogram,
+        rate = patient_test([age, sex, chest_pain_type, resting_blood_pressure, cholesterol, fasting_blood_sugar, resting_electrocardiogram,
                               max_heart_rate_achieved, exercise_induced_angina, st_depression, st_slope, num_major_vessels, thalassemia])
-        if rating is not None:
-            if rating[0]==0:
+        if rate is not None:
+            if rate==0:
                 rating = f"You are Healthy, you don't have a heart Disease."
             else:
                 rating = f"You have a heart Disease."
